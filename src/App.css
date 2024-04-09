@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+:root{
+  --accent: #00bfff; 
+}
+@keyframes scale {
+  from {
+    scale: 0.9;
+  }
+
+  to {
+    scale: 1.1;
+  }
+}
+
+.App {
+  margin: 0;
+  padding: 0;
+  color: rgb(245, 245, 245);
+  background: rgba(5, 5, 5, .9);
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.accent {
+  display: inline-block;
+  color: var(--accent);
+  animation: scale 2s ease-in-out infinite alternate;
+  margin-right: 5px;
+}
+
+.meme {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-height: 400px;
+  max-width: 400px;
+  height: 250px;
+  width: 250px;
+  background-size: cover;
+  background: rgba(0, 0, 0, 0.80);
+  border-radius: 5px;
+  margin: auto;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+img[src="assets/.jpg"]{
+  display: none;
+}
+
+div>span {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin: 25px;
+  position: absolute;
+  z-index: 5;
+  text-shadow: 1px 1px black;
+}
+
+.meme span:first-of-type{
+  top: 0;
+}
+.meme span:last-of-type{
+  bottom: 0;
+}
+
+.memeOpt {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin: 0 0 2.5% 0;
+}
+
+input,
+select {
+  margin: 10px auto;
+  border: none;
+  outline: none;
+  color: whitesmoke;
+  background: rgb(60, 60, 60);
+  border-radius: 15px;
+  padding: 15px;
+  max-width: 800px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-weight: 400;
+}
+select,button{
+  cursor: pointer;
+}
+option {
+  background: rgb(60, 60, 60);
+}
+
+input:hover,
+select:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+select:focus,
+input:focus {
+  transform: scale(1.1);
+  outline: none;
+  border: solid 1px var(--accent);
+}
+
+button {
+  height: 35px;
+  max-height: 75px;
+  width: 100px;
+  max-width: 150px;
+  border: none;
+  margin: 2.5% auto 2.5% auto;
+  border-radius: 15px;
+  padding: 5px 10px;
+  transition: all .5s;
+  outline: none;
+}
+
+button:hover {
+  background: var(--accent);
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: scale(0.9);
+}
