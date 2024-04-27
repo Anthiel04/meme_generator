@@ -15,6 +15,16 @@
   }
 }
 
+@keyframes scaleOpt {
+  from {
+    scale: 0.9;
+  }
+
+  to {
+    scale: 1.1;
+  }
+}
+
 .App {
   margin: 0;
   padding: 0;
@@ -22,11 +32,11 @@
   background: rgba(5, 5, 5, .9);
   display: flex;
   text-align: center;
-  flex-direction: column;
   align-content: center;
-  justify-content: center;
+  justify-content: space-around;
   width: 100vw;
   height: 100vh;
+  flex-wrap: wrap;
 }
 
 .accent {
@@ -69,7 +79,7 @@ div>span {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 500;
   font-size: 1.25rem;
-  margin: 25px;
+  margin: 15px;
   position: absolute;
   z-index: 5;
   text-shadow: 1px 1px black;
@@ -88,7 +98,6 @@ div>span {
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  margin: 0 0 2.5% 0;
 }
 
 input,
@@ -108,6 +117,7 @@ select {
 select,button{
   cursor: pointer;
 }
+
 option {
   background: rgb(60, 60, 60);
 }
@@ -126,16 +136,16 @@ input:focus {
 }
 
 button {
+  outline: none;
   height: 35px;
-  max-height: 75px;
   width: 100px;
+  max-height: 75px;
   max-width: 150px;
+  margin: 15% auto 2.5% auto;
   border: none;
-  margin: 2.5% auto 2.5% auto;
   border-radius: 15px;
   padding: 5px 10px;
   transition: all .5s;
-  outline: none;
 }
 
 button:hover {

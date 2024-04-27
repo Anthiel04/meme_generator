@@ -8,13 +8,13 @@ function App() {
   const [img, setImg] = useState("")
 
   const downloadImg = e => {
-    html2canvas(document.querySelector(".meme")).then(function(canvas) {
+    html2canvas(document.querySelector(".meme")).then(function (canvas) {
       let img = canvas.toDataURL("image/png")
       let link = document.createElement('a')
       link.download = 'meme.png'
       link.href = img;
       link.click()
-  })
+    })
   }
 
   const cambiar1 = (e) => {
@@ -24,18 +24,25 @@ function App() {
     setlinea2(e.target.value);
   };
 
-  function cambiarImg(e){
+  function cambiarImg(e) {
     setImg(e.target.value)
+  }
+
+  const anim = (e) =>{
+    const opt = document.getElementsByTagName('option');
+    for(let option of opt){
+      option.style.animation="scaleOpt 1 ease-out forwards"
+    }
   }
 
   return (
     <div className="App">
-      <h2>
-        <div className="accent">Meme</div> Generator
-      </h2>
       <div className="memeOpt">
-        <select onChange={cambiarImg}>
-          <option defaultValue disabled hidden>Select Image</option>
+        <h2>
+          <div className="accent">Meme</div> Generator
+        </h2>
+        <select onChange={cambiarImg} onClick={anim}>
+          <option selected disabled hidden>Select Image</option>
           <option value="fire">Casa en Llamas</option>
           <option value="futurama">Futurama</option>
           <option value="history">History Channel</option>
@@ -56,12 +63,14 @@ function App() {
           placeholder="Linea 2"
         />
       </div>
-      <div className="meme">
-        <span>{linea1}</span>
-        <img src={"assets/"+img+".jpg"} alt="meme"/>
-        <span>{linea2}</span>
-      </div>
-      <button id="download" onClick={downloadImg}>Download</button>
+      <section>
+        <div className="meme">
+          <span>{linea1}</span>
+          <img src={"assets/" + img + ".jpg"} alt="meme" />
+          <span>{linea2}</span>
+        </div>
+        <button id="download" onClick={downloadImg}>Download</button>
+      </section>
     </div>
   );
 }
